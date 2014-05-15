@@ -1,4 +1,4 @@
-Eigen Faces Demonstation
+Eigen Faces Demonstration
 ========================
 
 A simple demo of the Eigen faces paper.
