@@ -56,10 +56,11 @@ end
 waitforbuttonpress;
 
 %% Projecting a new/existing image
-% Let's try to reproject the first training image itself
+% Let's try to reproject some of the training image itself
+try_reconst = 50;
 n_eig = 7; % num of eig vectors to use
-omegas = U(:, 1:n_eig)' * double(imgs(:, 1) - avg_face); % weights of each eigen vector
+omegas = U(:, 1:n_eig)' * double(imgs(:, try_reconst) - avg_face); % weights of each eigen vector
 res = U(:, 1:n_eig) * omegas + double(avg_face);
 set(f, 'Name', 'Reconstruction using 7 eigen faces');
-subplot(1,2,1); imshow(reshape(imgs(:,1), rows, []));
+subplot(1,2,1); imshow(reshape(imgs(:,try_reconst), rows, []));
 subplot(1,2,2); imshow(reshape(res, rows, []), []);
