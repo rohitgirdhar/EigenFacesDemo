@@ -40,7 +40,7 @@ waitforbuttonpress;
 % Need the eig vectors for A*A^t, but going to compute for A^T * A
 % (computational reasons)
 L = double(A') * double(A);
-[V, D] = eig(C);
+[V, D] = eig(L);
 % sort in descending order
 [D, order] = sort(diag(D),'descend');
 V = V(:,order);
